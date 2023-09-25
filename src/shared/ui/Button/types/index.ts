@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, FC, ReactNode, SVGProps } from 'react';
+import { ButtonHTMLAttributes, FC, SVGProps } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size: 's' | 'm' | 'l'
