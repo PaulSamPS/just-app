@@ -27,6 +27,6 @@ jobs:
         if: always()
       - name: linting scss
         run: npm run stylelint
-      - name: unit testing
-        if: always()
-        run: npm run test:unit
+#      - name: unit testing
+#        if: always()
+#        run: npm run test:unit

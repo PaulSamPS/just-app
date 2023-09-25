@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import {SubheadProps} from './types';
+import { SubheadProps } from './types';
 import styles from './Subhead.module.scss';
 
 export const Subhead = ({
