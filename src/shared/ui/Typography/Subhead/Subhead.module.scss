@@ -1,13 +1,9 @@
-.text {
+.subhead {
 	color: inherit;
-	font-size: 15px;
-	line-height: 20px;
-	letter-spacing: -0.24px;
+	font-size: 14px;
+	line-height: 18px;
+	letter-spacing: -0.154px;
 
-}
-
-.error {
-	color: var(--red-bright);
 }
 
 .regular {
@@ -16,4 +12,8 @@
 
 .medium {
 	font-family: var(--font-family-medium);
+}
+
+.bold {
+	font-family: var(--font-family-bold);
 }

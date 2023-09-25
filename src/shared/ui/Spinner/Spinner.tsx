@@ -1,20 +1,20 @@
 import clsx from 'clsx';
-import { AllHTMLAttributes } from 'react';
 import styles from './Spinner.module.scss';
-
-interface SpinnerProps extends AllHTMLAttributes<HTMLSpanElement> {
-    background?: string;
-}
+import { SpinnerProps } from './types';
 
 export const Spinner = ({
-    background = 'var(--color)',
+    backgroundColor = 'inherit',
     className,
     'aria-label': ariaLabel = 'Загружается...',
 }: SpinnerProps) => (
-    <span role='status' aria-label={ariaLabel} className={clsx(styles.spinner, className)}>
-        <div style={{ background }} />
-        <div style={{ background }} />
-        <div style={{ background }} />
-        <div style={{ background }} />
+    <span
+        role='status'
+        aria-label={ariaLabel}
+        className={clsx(styles.spinner, className)}
+    >
+        <div style={{ backgroundColor }} />
+        <div style={{ backgroundColor }} />
+        <div style={{ backgroundColor }} />
+        <div style={{ backgroundColor }} />
     </span>
 );

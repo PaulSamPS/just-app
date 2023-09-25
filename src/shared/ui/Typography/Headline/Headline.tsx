@@ -1,18 +1,16 @@
 import clsx from 'clsx';
-import { TextProps } from './types';
-import styles from './Text.module.scss';
+import { HeadlineProps } from './types';
+import styles from './Headline.module.scss';
 
-export const Text = ({
+export const Headline = ({
     children,
     weight = 'regular',
-    error,
     className,
     ...restProps
-}: TextProps) => {
+}: HeadlineProps) => {
     const classes = clsx(
-        styles.text,
+        styles.headline,
         styles[weight],
-        error && styles.error,
         className
     );
 

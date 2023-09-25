@@ -1,18 +1,20 @@
 import clsx from 'clsx';
-import { TextProps } from './types';
-import styles from './Text.module.scss';
+import { CaptionProps } from './types';
+import styles from './Caption.module.scss';
 
-export const Text = ({
+export const Caption = ({
     children,
     weight = 'regular',
-    error,
+    size = 'm',
+    uppercase,
     className,
     ...restProps
-}: TextProps) => {
+}: CaptionProps) => {
     const classes = clsx(
-        styles.text,
+        styles.caption,
         styles[weight],
-        error && styles.error,
+        styles[size],
+        uppercase && styles.uppercase,
         className
     );
 

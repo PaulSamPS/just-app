@@ -1,10 +1,8 @@
 import clsx from 'clsx';
-import { AllHTMLAttributes, memo } from 'react';
 import styles from './ErrorPage.module.scss';
+import { PageErrorProps } from './types';
 
-interface PageErrorProps extends AllHTMLAttributes<HTMLDivElement> {}
-
-export const ErrorPage = memo(({ className }: PageErrorProps) => {
+export const ErrorPage = ({ className }: PageErrorProps) => {
     const reloadPage = () => {
         // eslint-disable-next-line no-restricted-globals
         location.reload();
@@ -19,4 +17,4 @@ export const ErrorPage = memo(({ className }: PageErrorProps) => {
             </button>
         </div>
     );
-});
+};

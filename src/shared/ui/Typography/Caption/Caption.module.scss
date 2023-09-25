@@ -1,0 +1,42 @@
+.caption {
+	color: inherit;
+}
+
+.regular {
+	font-family: var(--font-family-regular);
+}
+
+.medium {
+	font-family: var(--font-family-medium);
+}
+
+.bold {
+	font-family: var(--font-family-bold);
+}
+
+.xs {
+	font-size: 9px;
+	line-height: 12px;
+	letter-spacing: 0.171px;
+}
+
+.s {
+	font-size: 11px;
+	line-height: 14px;
+	letter-spacing: 0.06px;
+}
+
+.m {
+	font-size: 12px;
+	line-height: 14px;
+}
+
+.l {
+	font-size: 13px;
+	line-height: 16px;
+	letter-spacing: -0.078px;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}

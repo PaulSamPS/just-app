@@ -1,18 +1,16 @@
 import clsx from 'clsx';
-import { TextProps } from './types';
-import styles from './Text.module.scss';
+import {SubheadProps} from './types';
+import styles from './Subhead.module.scss';
 
-export const Text = ({
+export const Subhead = ({
     children,
     weight = 'regular',
-    error,
     className,
     ...restProps
-}: TextProps) => {
+}: SubheadProps) => {
     const classes = clsx(
-        styles.text,
+        styles.subhead,
         styles[weight],
-        error && styles.error,
         className
     );
 

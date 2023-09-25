@@ -1,14 +1,10 @@
 import clsx from 'clsx';
-import { memo } from 'react';
 import styles from './LoaderPage.module.scss';
 import { Spinner } from '@/shared/ui/Spinner';
+import { LoaderPageProps } from './types';
 
-interface PageLoaderProps {
-    className?: string;
-}
-
-export const LoaderPage = memo(({ className }: PageLoaderProps) => (
+export const LoaderPage = ({ className }: LoaderPageProps) => (
     <div className={clsx(styles['page-loader'], className)}>
         <Spinner />
     </div>
-));
+);

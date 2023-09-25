@@ -8,6 +8,13 @@
 	--blue-400-alpha-48: rgb( 81 129 184 / 48%);
 	--blue-900-alpha-12: rgb( 0 20 51 / 12%);
 
+	/* Light blue */
+	--light-blue-40: #E5EBF1;
+	--light-blue-400: #7996B2;
+
+	/* Steel gray */
+	--steel-gray-a540: #55677D;
+
 	/* Green */
 	--green: #4BB34B;
 	--green-dark: #43A843;
@@ -26,4 +33,9 @@
 	--white: #FFF;
 	--white-alpha-88: rgb(255 255 255 / 88%);
 	--white-alpha-72: rgb(255 255 255 / 72%);
+
+	/* Fonts */
+	--font-family-regular: 'Regular';
+	--font-family-medium: 'Medium';
+	--font-family-bold: 'Bold';
 }
