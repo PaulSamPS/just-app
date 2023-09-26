@@ -8,6 +8,8 @@ import { Title } from '@/shared/ui/Typography/Title';
 import { Headline } from '@/shared/ui/Typography/Headline';
 import { Subhead } from '@/shared/ui/Typography/Subhead';
 import { Caption } from '@/shared/ui/Typography/Caption';
+import { Portal } from '@/shared/ui/Portal';
+import { Modal } from '@/shared/ui/Modal';
 
 interface HomeProps {
     className?: string
@@ -15,9 +17,18 @@ interface HomeProps {
 
 const Home = ({ className }: HomeProps) => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isModal, setIsModal] = useState<boolean>(false);
 
     const onLoading = () => {
         setIsLoading(!isLoading);
+    };
+
+    const onOpenModal = () => {
+        setIsModal(!isModal);
+    };
+
+    const onCloseModal = () => {
+        setIsModal(false);
     };
 
     return (
@@ -60,6 +71,10 @@ const Home = ({ className }: HomeProps) => {
             >
                 В корзину
             </Button>
+            <Button size='l' appearance='commerce' onClick={onOpenModal}>Modal</Button>
+            <Portal>
+                <Modal isOpen={isModal} onClose={onCloseModal} closeIcon>Modal</Modal>
+            </Portal>
         </div>
     );
 };
