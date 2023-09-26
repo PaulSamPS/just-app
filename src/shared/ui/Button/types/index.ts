@@ -9,7 +9,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
         'commerce' |
         'overlay-primary' |
         'overlay-secondary' |
-        'overlay-outline'
+        'overlay-outline' |
+        'clear'
     Icon?: FC<SVGProps<SVGSVGElement>>
     iconPosition?: 'left' | 'right'
     isLoading?: boolean

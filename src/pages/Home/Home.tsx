@@ -73,7 +73,7 @@ const Home = ({ className }: HomeProps) => {
             </Button>
             <Button size='l' appearance='commerce' onClick={onOpenModal}>Modal</Button>
             <Portal>
-                <Modal isOpen={isModal} onClose={onCloseModal} closeIcon>Modal</Modal>
+                <Modal isOpen={isModal} onClose={onCloseModal} closeIcon>Lorem ipsum dolor sit amet.</Modal>
             </Portal>
         </div>
     );

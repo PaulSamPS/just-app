@@ -87,6 +87,27 @@
 	background: var(--green);
 }
 
+.overlay-primary {
+	color: var(--gray-800);
+	background: var(--white);
+}
+
+.overlay-secondary {
+	color: var(--white);
+	background: var(--white-alpha-24);
+}
+
+.overlay-outline {
+	color: var(--white);
+	background: transparent;
+	border: 1px solid var(--white);
+}
+
+.clear {
+	color: var(--black);
+	background: transparent;
+}
+
 .spinner {
 	transform-origin: center;
 	animation: lds-dual-ring 1s linear infinite;

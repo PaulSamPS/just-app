@@ -15,6 +15,8 @@ export const Modal = ({ className, children, isOpen, onClose, closeIcon = false 
                 <motion.div
                     className={styles.overlay}
                     onClick={onClose}
+                    role='button'
+                    tabIndex={0}
                     animate={isOpen ? 'open' : 'closed'}
                     variants={animateOverlay}
                     initial='closed'
@@ -30,7 +32,15 @@ export const Modal = ({ className, children, isOpen, onClose, closeIcon = false 
                             {...animateContent}
                         >
                             {children}
-                            {closeIcon && <div className={styles.close}><CloseIcon onClick={onClose} /></div>}
+                            {closeIcon && (
+                                <div
+                                    className={styles.close}
+                                    role='button'
+                                    tabIndex={0}
+                                >
+                                    <CloseIcon onClick={onClose} />
+                                </div>
+                            )}
                         </motion.div>
                     </motion.div>
                 </motion.div>

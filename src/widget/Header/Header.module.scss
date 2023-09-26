@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background: var(--white);
+  border-bottom: 1px solid var(--steel-gray-80);
+}
+
+.auth {
+  margin-left: auto;
+  transition: color ease-in-out .2s;
+
+  &:hover {
+    color: var(--blue-400);
+  }
+}
