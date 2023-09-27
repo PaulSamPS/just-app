@@ -1,7 +1,7 @@
-import { MouseEvent, useCallback, useEffect } from 'react';
-import { useModalProps, useModalReturn } from '../types';
+import { useCallback, useEffect } from 'react';
+import { usePopupProps } from '../types';
 
-export const useModal = ({ isOpen, onClose }: useModalProps): useModalReturn => {
+export const usePopup = ({ isOpen, onClose }: usePopupProps): void => {
     const onKeyDown = useCallback(
         (e: KeyboardEvent) => {
             if (e.key === 'Escape' && onClose) {
@@ -10,11 +10,6 @@ export const useModal = ({ isOpen, onClose }: useModalProps): useModalReturn => 
         },
         [onClose]
     );
-
-    const onContentClick = (e: MouseEvent) => {
-        e.stopPropagation();
-    };
-
     useEffect(() => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
@@ -23,6 +18,4 @@ export const useModal = ({ isOpen, onClose }: useModalProps): useModalReturn => 
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
-
-    return { onContentClick };
 };

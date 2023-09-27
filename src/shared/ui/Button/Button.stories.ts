@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { FC, SVGProps } from 'react';
 import { Button } from './Button';
 import { PlusIcon } from '@/shared/assets';
 

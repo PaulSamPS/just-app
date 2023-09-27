@@ -11,8 +11,7 @@ export const ErrorPage = ({ className }: PageErrorProps) => {
     return (
         <div className={clsx(styles['page-error'], className)}>
             <p>Что-то пошло не так</p>
-            {/* eslint-disable-next-line react/button-has-type */}
-            <button onClick={reloadPage}>
+            <button onClick={reloadPage} type='button'>
                 Обновить страницу
             </button>
         </div>

@@ -23,8 +23,7 @@ export const Button = ({
     );
 
     return (
-        // eslint-disable-next-line react/button-has-type
-        <button className={classes} {...otherProps}>
+        <button className={classes} type='button' {...otherProps}>
             {iconPosition === 'left' && Icon && !isLoading && <Icon />}
             {iconPosition === 'left' && isLoading && <IconSpinner className={styles.spinner} />}
             {children}
