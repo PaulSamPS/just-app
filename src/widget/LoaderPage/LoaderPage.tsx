@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import styles from './LoaderPage.module.scss';
-import { Spinner } from '@/shared/ui/Spinner';
+import { Spinner } from '@/shared/components/Spinner';
 import { LoaderPageProps } from './types';
 
 export const LoaderPage = ({ className }: LoaderPageProps) => (

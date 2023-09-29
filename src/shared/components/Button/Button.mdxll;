@@ -1,0 +1,40 @@
+import {Canvas, ColorItem, ColorPalette, Controls, Meta, Story, Title} from "@storybook/blocks";
+import ButtonStories from "./Button.stories";
+
+<Meta of={ButtonStories} />
+
+<Title>212</Title>
+<Canvas withToolbar />
+<Controls />
+
+<ColorPalette>
+    <ColorItem
+        title='Blue'
+        subtitle='Blue используемый в кнопке'
+        colors={{
+            BlueThemed: '#447BBA',
+            BlueHover: '#4177B5',
+            BlueActive: '#3F72B0'
+        }}
+    />
+    <ColorItem
+        title='Green'
+        subtitle='Green используемый в кнопке'
+        colors={{
+            Green: '#4BB34B',
+            GreenHover: '#48AC4A',
+            GreenActive: '#45A64A'
+        }}
+    />
+    <ColorItem
+        title='Steel Gray'
+        subtitle='Steel Gray используемый в кнопке'
+        colors={{
+            SteelGrayThemed: 'rgb(229 235 241 / 99%)',
+            SteelGrayHover: 'rgb(213 224 234 / 99%)',
+            SteelGrayActive: 'rgb(200 212 224 / 99%)',
+            SteelGrayBgHover: '#EDEFF2',
+            SteelGrayBgActive: '#E3E5EB'
+        }}
+    />
+</ColorPalette>

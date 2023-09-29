@@ -1,14 +1,14 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import styles from './Home.module.scss';
-import { Text } from '@/shared/ui/Typography/Text';
-import { Button } from '@/shared/ui/Button';
-import { PlusIcon } from '@/shared/assets';
-import { Title } from '@/shared/ui/Typography/Title';
-import { Headline } from '@/shared/ui/Typography/Headline';
-import { Subhead } from '@/shared/ui/Typography/Subhead';
-import { Caption } from '@/shared/ui/Typography/Caption';
-import { PopupMain } from '@/shared/ui/Popup';
+import { Text } from '@/shared/components/Typography/Text';
+import { Button } from '@/shared/components/Button';
+import { DeleteOutlineIcon56, PlusIcon } from '@/shared/assets';
+import { Title } from '@/shared/components/Typography/Title';
+import { Headline } from '@/shared/components/Typography/Headline';
+import { Subhead } from '@/shared/components/Typography/Subhead';
+import { Caption } from '@/shared/components/Typography/Caption';
+import { PopupDialog, PopupMain } from '@/widget/Popup';
 
 interface HomeProps {
     className?: string
@@ -17,17 +17,26 @@ interface HomeProps {
 const Home = ({ className }: HomeProps) => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [isModal, setIsModal] = useState<boolean>(false);
+    const [isDialog, setIsDialog] = useState<boolean>(false);
 
     const onLoading = () => {
         setIsLoading(!isLoading);
     };
 
     const onOpenModal = () => {
-        setIsModal(!isModal);
+        setIsModal(true);
     };
 
     const onCloseModal = () => {
         setIsModal(false);
+    };
+
+    const onOpenDialog = () => {
+        setIsDialog(true);
+    };
+
+    const onCloseDialog = () => {
+        setIsDialog(false);
     };
 
     return (
@@ -52,26 +61,40 @@ const Home = ({ className }: HomeProps) => {
             <Button size='m' appearance='secondary'>Secondary</Button>
             <Button size='l' appearance='outline'>Outline</Button>
             <Button size='l' appearance='commerce' disabled>Commerce</Button>
-            <Button size='s' appearance='commerce' Icon={PlusIcon} iconPosition='left'>Commerce</Button>
-            <Button size='m' appearance='commerce' Icon={PlusIcon} iconPosition='left'>Commerce</Button>
-            <Button size='l' appearance='commerce' Icon={PlusIcon} iconPosition='left'>Commerce</Button>
-            <Button size='s' appearance='outline' Icon={PlusIcon} iconPosition='right'>Primary</Button>
-            <Button size='m' appearance='outline' Icon={PlusIcon} iconPosition='right'>Primary</Button>
-            <Button size='l' appearance='outline' Icon={PlusIcon} iconPosition='right'>Primary</Button>
+            <Button size='s' appearance='commerce' before={<PlusIcon />}>Commerce</Button>
+            <Button size='m' appearance='commerce' before={<PlusIcon />}>Commerce</Button>
+            <Button size='l' appearance='commerce' before={<PlusIcon />}>Commerce</Button>
+            <Button size='s' appearance='outline' after={<PlusIcon />}>Primary</Button>
+            <Button size='m' appearance='outline' after={<PlusIcon />}>Primary</Button>
+            <Button size='l' appearance='outline' after={<PlusIcon />}>Primary</Button>
             <Button
                 size='s'
                 appearance='primary'
-                Icon={PlusIcon}
-                iconPosition='right'
+                before={<PlusIcon />}
                 isLoading={isLoading}
-                disabled={isLoading}
-                fixed
                 onClick={onLoading}
             >
                 В корзину
             </Button>
             <Button size='l' appearance='commerce' onClick={onOpenModal}>Modal</Button>
-            <PopupMain isOpen={isModal} onClose={onCloseModal} closeButton>Lorem ipsum dolor sit amet.</PopupMain>
+            <PopupMain
+                isOpen={isModal}
+                onClose={onCloseModal}
+                headerText='Popup'
+                closeButton
+            />
+            <Button size='l' appearance='primary' onClick={onOpenDialog}>Dialog</Button>
+            <PopupDialog
+                isOpen={isDialog}
+                onClose={onCloseDialog}
+                closeButton
+                text='Вы действительно хотите удалить ?'
+                primaryButtonText='Да'
+                secondaryButtonText='Нет'
+                primaryButtonOnClick={onCloseDialog}
+                secondaryButtonTextOnClick={onCloseDialog}
+                Icon={DeleteOutlineIcon56}
+            />
         </div>
     );
 };

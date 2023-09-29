@@ -7,6 +7,9 @@
 	--blue-800: #1D3A5C;
 	--blue-400-alpha-48: rgb( 81 129 184 / 48%);
 	--blue-900-alpha-12: rgb( 0 20 51 / 12%);
+	--blue-themed: #447BBA;
+	--blue-hover: #4177B5;
+	--blue-active: #3F72B0;
 
 	/* Light blue */
 	--light-blue-40: #E5EBF1;
@@ -14,17 +17,26 @@
 
 	/* Steel gray */
 	--steel-gray-a540: #55677D;
+	--steel-gray-100: #DCE1E5;
 	--steel-gray-80: #E7E8EC;
 	--steel-gray-10: #FAFBFC;
 	--steel-gray-20: #F7F8FA;
+	--steel-gray-themed: rgb(229 235 241 / 99%);
+	--steel-gray-hover: rgb(213 224 234 / 99%);
+	--steel-gray-active: rgb(200 212 224 / 99%);
+	--steel-gray-bg-hover: #EDEFF2;
+	--steel-gray-bg-active: #E3E5EB;
 
 	/* Gray */
 	--gray-800: #333;
+	--gray-900: #222;
 
 	/* Green */
 	--green: #4BB34B;
 	--green-dark: #43A843;
 	--green-bright: #3DCC4B;
+	--green-hover: #48AC4A;
+	--green-active: #45A64A;
 
 	/* Red */
 	--red: #E64646;
