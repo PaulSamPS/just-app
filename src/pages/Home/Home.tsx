@@ -9,6 +9,7 @@ import { Headline } from '@/shared/components/Typography/Headline';
 import { Subhead } from '@/shared/components/Typography/Subhead';
 import { Caption } from '@/shared/components/Typography/Caption';
 import { PopupDialog, PopupMain } from '@/widget/Popup';
+import { Input } from '@/shared/components/Form/Input';
 
 interface HomeProps {
     className?: string
@@ -94,6 +95,9 @@ const Home = ({ className }: HomeProps) => {
                 primaryButtonOnClick={onCloseDialog}
                 secondaryButtonTextOnClick={onCloseDialog}
                 Icon={DeleteOutlineIcon56}
+            />
+            <Input
+                placeholder='Input'
             />
         </div>
     );
