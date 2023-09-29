@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import styles from './PopupMain.module.scss';
 import { PopupMainProps } from './types';
 import {
-    animatePopup,
     PopupContainer,
     PopupOverlay,
     PopupCloseButton
@@ -10,6 +9,7 @@ import {
 import { Headline } from '@/shared/components/Typography/Headline';
 import { Logo } from '@/shared/components/Logo';
 import { LogoIcon } from '@/shared/assets';
+import { animatePopup } from '../constants/animate';
 
 export const PopupMain = ({
     isOpen,

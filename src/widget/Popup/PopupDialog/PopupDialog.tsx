@@ -3,12 +3,12 @@ import { Button } from '@/shared/components/Button';
 import styles from './PopupDialog.module.scss';
 import { PopupDialogProps } from './types';
 import {
-    animatePopup,
     PopupContainer,
     PopupOverlay,
     PopupCloseButton
 } from '@/shared/components/Popup';
 import { Headline } from '@/shared/components/Typography/Headline';
+import { animatePopup } from '../constants/animate';
 
 export const PopupDialog = ({
     isOpen,
