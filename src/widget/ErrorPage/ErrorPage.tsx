@@ -1,19 +1,19 @@
-import clsx from 'clsx';
 import styles from './ErrorPage.module.scss';
-import { PageErrorProps } from './types';
+import { Button } from '@/shared/components/Button';
+import { Headline } from '@/shared/components/Typography/Headline';
 
-export const ErrorPage = ({ className }: PageErrorProps) => {
+export const ErrorPage = () => {
     const reloadPage = () => {
         // eslint-disable-next-line no-restricted-globals
         location.reload();
     };
 
     return (
-        <div className={clsx(styles['page-error'], className)}>
-            <p>Что-то пошло не так</p>
-            <button onClick={reloadPage} type='button'>
-                Обновить страницу
-            </button>
+        <div className={styles['page-error']}>
+            <Headline weight='medium'>Что-то пошло не так</Headline>
+            <Button size='m' appearance='primary' onClick={reloadPage} type='button'>
+                Обновить
+            </Button>
         </div>
     );
 };

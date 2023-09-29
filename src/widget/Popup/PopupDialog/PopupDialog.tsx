@@ -19,7 +19,7 @@ export const PopupDialog = ({
     secondaryButtonTextOnClick,
     primaryButtonOnClick,
     closeButton,
-    Icon
+    icon
 }: PopupDialogProps) => (
     <PopupContainer isOpen={isOpen} onClose={onClose}>
         <PopupOverlay onClose={onClose} />
@@ -27,7 +27,7 @@ export const PopupDialog = ({
             className={styles['popup-dialog']}
             {...animatePopup}
         >
-            {Icon && <Icon className={styles.icon} />}
+            {icon && <span className={styles.icon}>{icon}</span>}
             <Headline weight='medium' className={styles.title}>{text}</Headline>
             <div className={styles.actions}>
                 <Button

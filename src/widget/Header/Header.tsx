@@ -7,7 +7,7 @@ import { HeaderProps } from './types';
 
 export const Header = ({ className }: HeaderProps) => (
     <div className={clsx(styles.header, className)}>
-        <Logo Icon={LogoIcon} text='JustApp' uppercase />
+        <Logo Icon={<LogoIcon />} text='JustApp' uppercase />
         <Button
             size='m'
             appearance='clear'

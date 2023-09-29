@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Canvas, Controls, Description, Subtitle, Title } from '@storybook/blocks';
-import { FieldError } from 'react-hook-form';
 import { Input } from './Input';
 
 const meta: Meta<typeof Input> = {

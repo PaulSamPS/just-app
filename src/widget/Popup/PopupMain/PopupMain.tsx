@@ -27,7 +27,7 @@ export const PopupMain = ({
                 <Headline weight='medium' className={styles.headline}>{headerText}</Headline>
             </div>
             <div className={styles.body}>
-                <Logo text='JustApp' Icon={LogoIcon} uppercase />
+                <Logo text='JustApp' Icon={<LogoIcon />} uppercase />
             </div>
         </motion.div>
         {closeButton && <PopupCloseButton onClose={onClose} />}

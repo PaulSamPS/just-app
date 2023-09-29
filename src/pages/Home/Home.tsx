@@ -94,7 +94,7 @@ const Home = ({ className }: HomeProps) => {
                 secondaryButtonText='Нет'
                 primaryButtonOnClick={onCloseDialog}
                 secondaryButtonTextOnClick={onCloseDialog}
-                Icon={DeleteOutlineIcon56}
+                Icon={<DeleteOutlineIcon56 />}
             />
             <Input
                 placeholder='Input'

@@ -1,7 +1,7 @@
-import { AllHTMLAttributes, FC, SVGProps } from 'react';
+import { AllHTMLAttributes, ReactNode } from 'react';
 
 export interface LogoProps extends AllHTMLAttributes<HTMLDivElement> {
-    Icon?: FC<SVGProps<SVGSVGElement>>
+    Icon?: ReactNode
     text: string
     uppercase?: boolean
 }

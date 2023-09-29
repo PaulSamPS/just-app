@@ -7,7 +7,7 @@
     height: 36px;
     padding: 0 12px;
     color: var(--black);
-    font-size: 16px;
+    font-size: 15px;
     font-family: var(--font-family-regular);
     background-color: var(--steel-gray-20);
     border: 1px solid var(--steel-gray-120);
@@ -18,7 +18,7 @@
 
     &::placeholder {
       color: var(--steel-gray-200);
-      font-size: 16px;
+      font-size: 15px;
       font-family: var(--font-family-regular);
     }
 
@@ -41,7 +41,8 @@
 
 .label {
   color: var(--steel-gray-500);
-  font-size: 16px;
+  font-size: 14px;
+  font-family: var(--font-family-regular);
   line-height: 24px;
 }
 

@@ -1,4 +1,4 @@
-import { FC, SVGProps } from 'react';
+import { ReactNode } from 'react';
 
 export interface PopupDialogProps {
     isOpen: boolean;
@@ -9,5 +9,5 @@ export interface PopupDialogProps {
     primaryButtonOnClick: () => void
     secondaryButtonText: string
     secondaryButtonTextOnClick: () => void
-    Icon?: FC<SVGProps<SVGSVGElement>>
+    icon?: ReactNode
 }
