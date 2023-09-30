@@ -1,13 +1,14 @@
 import { FormProvider, useForm } from 'react-hook-form';
-import { useEffect, useMemo, useState } from 'react';
-import { PopupSignIn } from '@/widget/Popup/PopupAuth/components/PopupSignIn/PopupSignIn';
+import { useEffect, useState } from 'react';
+import { PopupSignIn } from './components/PopupSignIn/PopupSignIn';
 import { AuthFormProps, AuthProps } from './types';
-import { PopupSignUp } from '@/widget/Popup/PopupAuth/components/PopupSignUp/PopupSignUp';
+import { PopupSignUp } from './components/PopupSignUp/PopupSignUp';
 import { PopupContainer, PopupOverlay, Portal } from '@/shared/components/Popup';
+import { PopupResetPassword } from '@/widget/Popup/PopupAuth/components/PopupResetPassword/PopupResetPassword';
 
 export const PopupAuth = ({ isOpen, onClose }: AuthProps) => {
     const methods = useForm<AuthFormProps>({ mode: 'onSubmit', reValidateMode: 'onSubmit' });
-    const [authAction, setAuthAction] = useState<'sign-in' | 'sign-up'>('sign-in');
+    const [authAction, setAuthAction] = useState<'sign-in' | 'sign-up' | 'reset-password'>('sign-in');
 
     const onSignUp = () => {
         methods.clearErrors();
@@ -21,6 +22,12 @@ export const PopupAuth = ({ isOpen, onClose }: AuthProps) => {
         setAuthAction('sign-in');
     };
 
+    const onResetPassword = () => {
+        methods.clearErrors();
+        methods.reset();
+        setAuthAction('reset-password');
+    };
+
     useEffect(() => {
         if (!isOpen) {
             methods.clearErrors();
@@ -31,10 +38,13 @@ export const PopupAuth = ({ isOpen, onClose }: AuthProps) => {
     const currentAction = () => {
         switch (authAction) {
         case 'sign-in':
-            return <PopupSignIn onClose={onClose} signUp={onSignUp} />;
+            return <PopupSignIn onClose={onClose} signUp={onSignUp} resetPassword={onResetPassword} />;
 
         case 'sign-up':
             return <PopupSignUp onClose={onClose} signIn={onSignIn} />;
+
+        case 'reset-password':
+            return <PopupResetPassword onClose={onClose} signIn={onSignIn} />;
 
         default:
             return <PopupSignIn onClose={onClose} signUp={onSignUp} />;

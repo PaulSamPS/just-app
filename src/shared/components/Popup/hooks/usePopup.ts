@@ -4,7 +4,7 @@ import { usePopupProps } from '../types';
 export const usePopup = ({ isOpen, onClose }: usePopupProps): void => {
     const onKeyDown = useCallback(
         (e: KeyboardEvent) => {
-            if (e.key === 'Escape' && onClose) {
+            if (e.key === 'Escape') {
                 onClose();
             }
         },

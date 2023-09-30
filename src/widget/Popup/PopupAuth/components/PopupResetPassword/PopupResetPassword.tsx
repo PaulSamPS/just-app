@@ -1,14 +1,16 @@
 import { useFormContext } from 'react-hook-form';
+import styles from './PopupResetPassword.module.scss';
 import { PopupContentWithHeader } from '@/shared/components/Popup';
-import { AuthFormProps, AuthSignInProps } from '../../types';
-import { Input } from '@/shared/components/Form/Input';
-import styles from './PopupSignIn.module.scss';
-import { Button } from '@/shared/components/Button';
+import { AuthFormProps, AuthResetPasswordProps } from '@/widget/Popup/PopupAuth/types';
 import { Logo } from '@/shared/components/Logo';
 import { LogoIcon } from '@/shared/assets';
-import { emailOptions, passwordOptions } from '../../constant';
+import { Input } from '@/shared/components/Form/Input';
+import { emailOptions } from '@/widget/Popup/PopupAuth/constant';
+import { Button } from '@/shared/components/Button';
+import { Headline } from '@/shared/components/Typography/Headline';
+import { Subhead } from '@/shared/components/Typography/Subhead';
 
-export const PopupSignIn = ({ onClose, signUp, resetPassword }: AuthSignInProps) => {
+export const PopupResetPassword = ({ onClose, signIn }: AuthResetPasswordProps) => {
     const {
         register,
         handleSubmit,
@@ -20,20 +22,15 @@ export const PopupSignIn = ({ onClose, signUp, resetPassword }: AuthSignInProps)
     };
 
     return (
-        <PopupContentWithHeader headerText='Вход в аккаунт' onClose={onClose}>
-            <form className={styles['popup-sign-in']} onSubmit={handleSubmit(onSubmit)}>
+        <PopupContentWithHeader headerText='Сброс пароля' onClose={onClose}>
+            <form className={styles['popup-reset-password']} onSubmit={handleSubmit(onSubmit)}>
                 <Logo text='JustApp' icon={<LogoIcon />} uppercase />
+                <Subhead weight='regular'>На почту придет письмо с инструкцией по сбросу пароля</Subhead>
                 <Input
                     {...register('email', emailOptions)}
                     type='text'
                     placeholder='Введите email'
                     error={errors.email?.message}
-                />
-                <Input
-                    {...register('password', passwordOptions)}
-                    type='password'
-                    placeholder='Введите пароль'
-                    error={errors.password?.message}
                 />
                 <Button
                     size='m'
@@ -41,11 +38,10 @@ export const PopupSignIn = ({ onClose, signUp, resetPassword }: AuthSignInProps)
                     type='submit'
                     stretched
                 >
-                    Войти
+                    Сбросить
                 </Button>
                 <div className={styles.footer}>
-                    <Button size='s' appearance='clear' onClick={signUp}>Зарегистрироваться</Button>
-                    <Button size='s' appearance='clear' onClick={resetPassword}>Забыли пароль?</Button>
+                    <Button size='s' appearance='clear' onClick={signIn}>Войти</Button>
                 </div>
             </form>
         </PopupContentWithHeader>

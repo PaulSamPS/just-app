@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useState } from 'react';
+import { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
 import styles from './Home.module.scss';
 import { Text } from '@/shared/components/Typography/Text';
 import { Button } from '@/shared/components/Button';

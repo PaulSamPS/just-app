@@ -4,4 +4,5 @@ export interface PopupContentWithHeaderProps {
     headerText: string
     children: ReactNode
     onClose: () => void
+    isOpen?: boolean
 }
