@@ -30,7 +30,7 @@ export const animatePopupContent = {
             transition: {
                 type: 'spring',
                 damping: 18,
-                stiffness: 200
+                stiffness: 150
             }
         },
     },

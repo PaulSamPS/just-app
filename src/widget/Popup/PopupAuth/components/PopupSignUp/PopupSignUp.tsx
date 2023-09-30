@@ -1,14 +1,14 @@
 import { useFormContext } from 'react-hook-form';
+import styles from './PopupSignUp.module.scss';
+import { AuthFormProps, AuthSignUpProps } from '../../types';
 import { PopupContentWithHeader } from '@/shared/components/Popup';
-import { AuthFormProps, AuthSignInProps } from '../../types';
-import { Input } from '@/shared/components/Form/Input';
-import styles from './PopupSignIn.module.scss';
-import { Button } from '@/shared/components/Button';
 import { Logo } from '@/shared/components/Logo';
 import { LogoIcon } from '@/shared/assets';
-import { emailOptions, passwordOptions } from '../../constant';
+import { Input } from '@/shared/components/Form/Input';
+import { emailOptions, passwordOptions, usernameOptions } from '../../constant';
+import { Button } from '@/shared/components/Button';
 
-export const PopupSignIn = ({ onClose, signUp }: AuthSignInProps) => {
+export const PopupSignUp = ({ onClose, signIn }: AuthSignUpProps) => {
     const {
         register,
         handleSubmit,
@@ -20,8 +20,8 @@ export const PopupSignIn = ({ onClose, signUp }: AuthSignInProps) => {
     };
 
     return (
-        <PopupContentWithHeader headerText='Вход в аккаунт' onClose={onClose}>
-            <form className={styles['popup-sign-in']} onSubmit={handleSubmit(onSubmit)}>
+        <PopupContentWithHeader headerText='Регистрация' onClose={onClose}>
+            <form className={styles['popup-sign-up']} onSubmit={handleSubmit(onSubmit)}>
                 <Logo text='JustApp' icon={<LogoIcon />} uppercase />
                 <Input
                     {...register('email', emailOptions)}
@@ -35,18 +35,21 @@ export const PopupSignIn = ({ onClose, signUp }: AuthSignInProps) => {
                     placeholder='Введите пароль'
                     error={errors.password?.message}
                 />
+                <Input
+                    {...register('username', usernameOptions)}
+                    placeholder='Введите имя пользователя'
+                    type='text'
+                    error={errors.username?.message}
+                />
                 <Button
                     size='m'
                     appearance='primary'
                     type='submit'
                     stretched
                 >
-                    Войти
+                    Зарегистрироваться
                 </Button>
-                <div className={styles.footer}>
-                    <Button size='s' appearance='clear' onClick={signUp}>Зарегистрироваться</Button>
-                    <Button size='s' appearance='clear'>Забыли пароль?</Button>
-                </div>
+                <Button size='s' appearance='clear' onClick={signIn}>Войти</Button>
             </form>
         </PopupContentWithHeader>
     );
