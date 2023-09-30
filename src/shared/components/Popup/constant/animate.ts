@@ -4,7 +4,7 @@ export const animateOverlay = {
     open: {
         opacity: 1,
         transition: {
-            type: 'spring',
+            type: 'tween',
             duration: 1,
             delayChildren: 0.2,
             staggerChildren: 0.05,
@@ -24,7 +24,6 @@ export const animatePopupContent = {
             x: 0,
             opacity: 1,
             transition: {
-                delay: 0.3,
                 type: 'tween',
                 damping: 18,
                 stiffness: 150
@@ -33,6 +32,11 @@ export const animatePopupContent = {
         closed: {
             x: -100,
             opacity: 0,
+            transition: {
+                type: 'tween',
+                damping: 18,
+                stiffness: 150
+            }
         },
     },
 } satisfies MotionProps;
@@ -41,11 +45,16 @@ export const animateCloseButton = {
     variants: {
         closed: { x: 100,
             opacity: 0,
+            transition: {
+                type: 'tween',
+                damping: 18,
+                stiffness: 200
+            }
         },
         open: { x: 0,
             opacity: 1,
             transition: {
-                type: 'spring',
+                type: 'tween',
                 damping: 18,
                 stiffness: 200
             }

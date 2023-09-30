@@ -1,3 +1,9 @@
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 5px;
+}
+
 .popup-content {
   position: relative;
   width: 440px;

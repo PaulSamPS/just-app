@@ -5,10 +5,12 @@ import { PopupContentWithHeaderProps } from './types';
 import { PopupCloseButton } from '@/shared/components/Popup';
 
 export const PopupContentWithHeader = ({ headerText, onClose, children }: PopupContentWithHeaderProps) => (
-    <>
-        <motion.div
+    <motion.div
+        className={styles.wrapper}
+        {...animatePopupContent}
+    >
+        <div
             className={styles['popup-content']}
-            {...animatePopupContent}
         >
             <div className={styles.header}>
                 <span>{headerText}</span>
@@ -16,8 +18,8 @@ export const PopupContentWithHeader = ({ headerText, onClose, children }: PopupC
             <div className={styles.body}>
                 {children}
             </div>
-        </motion.div>
+        </div>
         <PopupCloseButton onClose={onClose} />
-    </>
+    </motion.div>
 
 );

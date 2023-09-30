@@ -5,7 +5,7 @@ import { PopupContentWithOutHeaderProps } from './types';
 import { PopupCloseButton } from '@/shared/components/Popup';
 
 export const PopupContentWithOutHeader = ({ onClose, children }: PopupContentWithOutHeaderProps) => (
-    <>
+    <div className={styles.wrapper}>
         <motion.div
             className={styles['popup-content']}
             {...animatePopupContent}
@@ -15,6 +15,6 @@ export const PopupContentWithOutHeader = ({ onClose, children }: PopupContentWit
             </div>
         </motion.div>
         <PopupCloseButton onClose={onClose} />
-    </>
+    </div>
 
 );

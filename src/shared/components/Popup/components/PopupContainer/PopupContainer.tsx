@@ -20,9 +20,7 @@ export const PopupContainer = ({ isOpen, onClose, children }: ContainerProps) =>
                         initial='closed'
                         exit='closed'
                     >
-                        <div className={styles.content}>
-                            {children}
-                        </div>
+                        {children}
                     </motion.div>
                 )}
             </AnimatePresence>
