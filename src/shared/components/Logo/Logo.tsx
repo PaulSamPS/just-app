@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import styles from './Logo.module.scss';
 import { LogoProps } from './types';
 
-export const Logo = ({ text, Icon, uppercase, className, ...props }: LogoProps) => {
+export const Logo = ({ text, icon, uppercase, className, ...props }: LogoProps) => {
     const classes = clsx(
         styles.logo,
         uppercase && styles.uppercase,
@@ -11,7 +11,7 @@ export const Logo = ({ text, Icon, uppercase, className, ...props }: LogoProps) 
 
     return (
         <div className={classes} {...props}>
-            {Icon && Icon}
+            {icon && icon}
             <h1 className={styles['company-name']}>{text}</h1>
         </div>
     );

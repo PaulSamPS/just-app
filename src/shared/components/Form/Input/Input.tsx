@@ -4,12 +4,12 @@ import styles from './Input.module.scss';
 import { InputProps } from './types';
 
 const InputComponent = forwardRef(
-    ({ className, error, name, ...props }: InputProps, ref: ForwardedRef<HTMLInputElement>) => (
-        <div className={clsx(className, styles.wrapper, name && styles['with-label'])}>
-            {name && <label htmlFor={name} className={styles.label}>{name}</label>}
+    ({ className, error, label, ...props }: InputProps, ref: ForwardedRef<HTMLInputElement>) => (
+        <div className={clsx(className, styles.wrapper, label && styles['with-label'])}>
+            {label && <label htmlFor={label} className={styles.label}>{label}</label>}
             <input
                 ref={ref}
-                name={name}
+                name={label}
                 className={clsx(styles.input, {
                     [styles.error]: error,
                 })}
@@ -17,7 +17,7 @@ const InputComponent = forwardRef(
             />
             {error && (
                 <span className={styles['error-message']}>
-                    {typeof error !== 'string' ? error.message : error}
+                    {error}
                 </span>
             )}
         </div>

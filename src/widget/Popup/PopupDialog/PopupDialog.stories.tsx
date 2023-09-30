@@ -21,15 +21,6 @@ const meta: Meta<typeof PopupDialog> = {
             type: 'string',
             defaultValue: 'No',
         },
-        closeButton: {
-            description: 'Close button',
-            type: 'boolean',
-            defaultValue: true,
-            options: [true, false],
-            control: {
-                type: 'radio',
-            },
-        },
         icon: {
             table: {
                 disable: true
@@ -59,7 +50,6 @@ type Story = StoryObj<typeof PopupDialog>;
 export const PopupDialogStory: Story = {
     args: {
         text: 'A u sure?',
-        closeButton: true,
         primaryButtonText: 'Yes',
         secondaryButtonText: 'No',
         isOpen: true,

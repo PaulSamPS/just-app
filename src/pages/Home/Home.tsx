@@ -8,7 +8,7 @@ import { Title } from '@/shared/components/Typography/Title';
 import { Headline } from '@/shared/components/Typography/Headline';
 import { Subhead } from '@/shared/components/Typography/Subhead';
 import { Caption } from '@/shared/components/Typography/Caption';
-import { PopupDialog, PopupMain } from '@/widget/Popup';
+import { PopupAuth, PopupDialog, PopupMain } from '@/widget/Popup';
 import { Input } from '@/shared/components/Form/Input';
 
 interface HomeProps {
@@ -19,6 +19,7 @@ const Home = ({ className }: HomeProps) => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [isModal, setIsModal] = useState<boolean>(false);
     const [isDialog, setIsDialog] = useState<boolean>(false);
+    const [isPopupAuth, setIsPopupAuth] = useState<boolean>(false);
 
     const onLoading = () => {
         setIsLoading(!isLoading);
@@ -38,6 +39,14 @@ const Home = ({ className }: HomeProps) => {
 
     const onCloseDialog = () => {
         setIsDialog(false);
+    };
+
+    const onOpenPopupAuth = () => {
+        setIsPopupAuth(true);
+    };
+
+    const onClosePopupAuth = () => {
+        setIsPopupAuth(false);
     };
 
     return (
@@ -81,24 +90,23 @@ const Home = ({ className }: HomeProps) => {
             <PopupMain
                 isOpen={isModal}
                 onClose={onCloseModal}
-                headerText='Popup'
-                closeButton
             />
             <Button size='l' appearance='primary' onClick={onOpenDialog}>Dialog</Button>
             <PopupDialog
                 isOpen={isDialog}
                 onClose={onCloseDialog}
-                closeButton
                 text='Вы действительно хотите удалить ?'
                 primaryButtonText='Да'
                 secondaryButtonText='Нет'
                 primaryButtonOnClick={onCloseDialog}
                 secondaryButtonTextOnClick={onCloseDialog}
-                Icon={<DeleteOutlineIcon56 />}
+                icon={<DeleteOutlineIcon56 />}
             />
             <Input
                 placeholder='Input'
             />
+            <Button size='m' appearance='primary' onClick={onOpenPopupAuth}>Auth</Button>
+            <PopupAuth isOpen={isPopupAuth} onClose={onClosePopupAuth} />
         </div>
     );
 };

@@ -17,7 +17,7 @@
     transition: all ease-in-out .2s;
 
     &::placeholder {
-      color: var(--steel-gray-200);
+      color: var(--steel-gray-500);
       font-size: 15px;
       font-family: var(--font-family-regular);
     }
@@ -53,9 +53,12 @@
 
 .error-message {
   position: absolute;
-  top: -23px;
+  top: -18px;
   left: 0;
   color: var(--red) !important;
-  font-size: 16px;
+  font-size: 13px;
+  font-family: var(--font-family-regular);
+  line-height: 16px;
+  letter-spacing: -0.078px;
 }
 

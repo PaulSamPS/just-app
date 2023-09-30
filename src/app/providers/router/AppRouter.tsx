@@ -1,6 +1,6 @@
 import React, { Suspense, useMemo } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { PopupLoading } from 'src/widget/Popup/PopupLoading';
+import { PopupLoading } from '@/widget/Popup/PopupLoading';
 import { routeConfig } from './config/routerConfig';
 
 export const AppRouter = () => {

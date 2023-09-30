@@ -23,7 +23,7 @@ const meta: Meta<typeof Logo> = {
         }
     },
     argTypes: {
-        Icon: {
+        icon: {
             description: 'Logo Icon',
             type: 'boolean',
             defaultValue: <LogoIcon />,
@@ -55,7 +55,7 @@ type Story = StoryObj<typeof Logo>;
 export const LogoStory: Story = {
     args: {
         text: 'Logo',
-        Icon: <LogoIcon />,
+        icon: <LogoIcon />,
         uppercase: false
 
     },
