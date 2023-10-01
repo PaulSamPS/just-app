@@ -47,7 +47,6 @@ type Story = StoryObj<typeof Input>;
 
 export const InputStory: Story = {
     args: {
-        error: 'error',
         name: undefined,
         placeholder: 'input'
     },

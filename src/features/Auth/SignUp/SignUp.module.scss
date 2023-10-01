@@ -1,0 +1,16 @@
+.sign-up {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  row-gap: 20px;
+}
+
+.error {
+  color: var(--red-bright);
+}
+
+.success {
+  color: var(--green);
+}

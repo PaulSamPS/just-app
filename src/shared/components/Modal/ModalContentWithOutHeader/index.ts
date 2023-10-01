@@ -1,0 +1,1 @@
+export { ModalContentWithOutHeader } from './ModalContentWithOutHeader';

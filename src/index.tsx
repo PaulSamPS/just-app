@@ -4,15 +4,18 @@ import { App } from '@/app/App';
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
 import 'app/styles/index.scss';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
     <BrowserRouter>
-        <ErrorBoundary>
-            <ThemeProvider>
-                <App />
-            </ThemeProvider>
-        </ErrorBoundary>
+        <StoreProvider>
+            <ErrorBoundary>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </ErrorBoundary>
+        </StoreProvider>
     </BrowserRouter>
 );

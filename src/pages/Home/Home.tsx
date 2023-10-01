@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import styles from './Home.module.scss';
 import { Text } from '@/shared/components/Typography/Text';
 import { Button } from '@/shared/components/Button';
@@ -8,7 +8,7 @@ import { Title } from '@/shared/components/Typography/Title';
 import { Headline } from '@/shared/components/Typography/Headline';
 import { Subhead } from '@/shared/components/Typography/Subhead';
 import { Caption } from '@/shared/components/Typography/Caption';
-import { PopupAuth, PopupDialog, PopupMain } from '@/widget/Popup';
+import { ModalAuth, ModalDialog, ModalMain } from '@/widget/Modal';
 import { Input } from '@/shared/components/Form/Input';
 
 interface HomeProps {
@@ -87,12 +87,12 @@ const Home = ({ className }: HomeProps) => {
                 В корзину
             </Button>
             <Button size='l' appearance='commerce' onClick={onOpenModal}>Modal</Button>
-            <PopupMain
+            <ModalMain
                 isOpen={isModal}
                 onClose={onCloseModal}
             />
             <Button size='l' appearance='primary' onClick={onOpenDialog}>Dialog</Button>
-            <PopupDialog
+            <ModalDialog
                 isOpen={isDialog}
                 onClose={onCloseDialog}
                 text='Вы действительно хотите удалить ?'
@@ -106,7 +106,7 @@ const Home = ({ className }: HomeProps) => {
                 placeholder='Input'
             />
             <Button size='m' appearance='primary' onClick={onOpenPopupAuth}>Auth</Button>
-            <PopupAuth isOpen={isPopupAuth} onClose={onClosePopupAuth} />
+            <ModalAuth isOpen={isPopupAuth} onClose={onClosePopupAuth} />
         </div>
     );
 };

@@ -1,0 +1,27 @@
+.dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  row-gap: 16px;
+}
+
+.icon {
+  color: var(--blue-400);
+}
+
+.title {
+  font-size: 22px;
+  line-height: normal;
+  letter-spacing: 0.352px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  column-gap: 10px;
+}
