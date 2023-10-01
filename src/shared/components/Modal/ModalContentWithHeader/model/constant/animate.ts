@@ -17,4 +17,3 @@ export const animateContent = {
         },
     },
 } satisfies MotionProps;
-

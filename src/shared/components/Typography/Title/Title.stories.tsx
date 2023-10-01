@@ -14,7 +14,7 @@ const meta: Meta<typeof TitleComponent> = {
                     <Subtitle />
                     <Description />
                     {/* eslint-disable-next-line no-use-before-define */}
-                    <Canvas of={TitleStory} />
+                    <Canvas of={Primary} />
                     <Controls />
 
                 </>
@@ -58,7 +58,7 @@ const meta: Meta<typeof TitleComponent> = {
 export default meta;
 type Story = StoryObj<typeof TitleComponent>;
 
-export const TitleStory: Story = {
+export const Primary: Story = {
     args: {
         children: 'Title',
         weight: 'bold',

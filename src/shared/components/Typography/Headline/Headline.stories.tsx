@@ -14,7 +14,7 @@ const meta: Meta<typeof Headline> = {
                     <Subtitle />
                     <Description />
                     {/* eslint-disable-next-line no-use-before-define */}
-                    <Canvas of={HeadlineStory} />
+                    <Canvas of={Primary} />
                     <Controls />
 
                 </>
@@ -40,7 +40,7 @@ const meta: Meta<typeof Headline> = {
 export default meta;
 type Story = StoryObj<typeof Headline>;
 
-export const HeadlineStory: Story = {
+export const Primary: Story = {
     args: {
         children: 'Headline',
         weight: 'regular',

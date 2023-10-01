@@ -17,9 +17,9 @@ const meta: Meta<typeof ModalAuth> = {
 export default meta;
 type Story = StoryObj<typeof ModalAuth>;
 
-export const ModalAuthStory: Story = {
+export const Primary: Story = {
     args: {
         isOpen: true
     }
 };
-ModalAuthStory.decorators = [StoreDecorator({})];
+Primary.decorators = [StoreDecorator({})];

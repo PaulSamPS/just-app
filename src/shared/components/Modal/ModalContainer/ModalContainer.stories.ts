@@ -28,7 +28,7 @@ const meta: Meta<typeof ModalContainer> = {
 export default meta;
 type Story = StoryObj<typeof ModalContainer>;
 
-export const ModalContainerStory: Story = {
+export const Primary: Story = {
     args: {
         children: 'Content',
         isOpen: true

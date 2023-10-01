@@ -14,7 +14,7 @@ const meta: Meta<typeof Input> = {
                     <Subtitle />
                     <Description />
                     {/* eslint-disable-next-line no-use-before-define */}
-                    <Canvas of={InputStory} />
+                    <Canvas of={Primary} />
                     <Controls />
                 </>
             )
@@ -45,7 +45,7 @@ const meta: Meta<typeof Input> = {
 export default meta;
 type Story = StoryObj<typeof Input>;
 
-export const InputStory: Story = {
+export const Primary: Story = {
     args: {
         name: undefined,
         placeholder: 'input'

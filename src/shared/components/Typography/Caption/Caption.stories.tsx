@@ -14,7 +14,7 @@ const meta: Meta<typeof Caption> = {
                     <Subtitle />
                     <Description />
                     {/* eslint-disable-next-line no-use-before-define */}
-                    <Canvas of={CaptionStory} />
+                    <Canvas of={Primary} />
                     <Controls />
 
                 </>
@@ -58,7 +58,7 @@ const meta: Meta<typeof Caption> = {
 export default meta;
 type Story = StoryObj<typeof Caption>;
 
-export const CaptionStory: Story = {
+export const Primary: Story = {
     args: {
         children: 'Caption',
         weight: 'regular',

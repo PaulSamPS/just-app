@@ -15,7 +15,7 @@ const meta: Meta<typeof Logo> = {
                     <Subtitle />
                     <Description />
                     {/* eslint-disable-next-line no-use-before-define */}
-                    <Canvas of={LogoStory} />
+                    <Canvas of={Primary} />
                     <Controls />
 
                 </>
@@ -52,7 +52,7 @@ const meta: Meta<typeof Logo> = {
 export default meta;
 type Story = StoryObj<typeof Logo>;
 
-export const LogoStory: Story = {
+export const Primary: Story = {
     args: {
         text: 'Logo',
         icon: <LogoIcon />,

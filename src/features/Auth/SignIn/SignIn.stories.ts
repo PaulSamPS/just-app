@@ -22,8 +22,8 @@ const meta: Meta<typeof SignIn> = {
 export default meta;
 type Story = StoryObj<typeof SignIn>;
 
-export const SignInStory: Story = {};
-SignInStory.decorators = [StoreDecorator({ signIn: { isLoading: false } })];
+export const Primary: Story = {};
+Primary.decorators = [StoreDecorator({ signIn: { isLoading: false } })];
 
 export const Error: Story = {};
 Error.decorators = [StoreDecorator({ signIn: { error: 'error' } })];

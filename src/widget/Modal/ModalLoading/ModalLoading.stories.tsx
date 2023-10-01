@@ -10,4 +10,4 @@ const meta: Meta<typeof ModalLoading> = {
 export default meta;
 type Story = StoryObj<typeof ModalLoading>;
 
-export const ModalLoaderStory: Story = {};
+export const Primary: Story = {};

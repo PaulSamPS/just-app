@@ -14,7 +14,7 @@ const meta: Meta<typeof Text> = {
                     <Subtitle />
                     <Description />
                     {/* eslint-disable-next-line no-use-before-define */}
-                    <Canvas of={TextStory} />
+                    <Canvas of={Primary} />
                     <Controls />
 
                 </>
@@ -49,7 +49,7 @@ const meta: Meta<typeof Text> = {
 export default meta;
 type Story = StoryObj<typeof Text>;
 
-export const TextStory: Story = {
+export const Primary: Story = {
     args: {
         children: 'Text',
         weight: 'regular',

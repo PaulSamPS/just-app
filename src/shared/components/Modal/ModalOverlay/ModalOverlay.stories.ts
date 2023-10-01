@@ -16,7 +16,7 @@ const meta: Meta<typeof ModalOverlay> = {
 export default meta;
 type Story = StoryObj<typeof ModalOverlay>;
 
-export const ModalOverlayStory: Story = {
+export const Primary: Story = {
     parameters: {
         docs: {
             description: {

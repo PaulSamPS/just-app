@@ -19,7 +19,7 @@ const meta: Meta<typeof Spinner> = {
 export default meta;
 type Story = StoryObj<typeof Spinner>;
 
-export const SpinnerStory: Story = {
+export const Primary: Story = {
     args: {
         backgroundColor: 'black'
     },

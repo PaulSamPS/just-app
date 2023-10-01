@@ -17,8 +17,8 @@ const meta: Meta<typeof ResetPassword> = {
 export default meta;
 type Story = StoryObj<typeof ResetPassword>;
 
-export const ResetPasswordStory: Story = {};
-ResetPasswordStory.decorators = [StoreDecorator({ resetPassword: { isLoading: false } })];
+export const Primary: Story = {};
+Primary.decorators = [StoreDecorator({ resetPassword: { isLoading: false } })];
 
 export const Error: Story = {};
 Error.decorators = [StoreDecorator({ resetPassword: { error: 'error' } })];

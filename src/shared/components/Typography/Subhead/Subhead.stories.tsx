@@ -14,7 +14,7 @@ const meta: Meta<typeof Subhead> = {
                     <Subtitle />
                     <Description />
                     {/* eslint-disable-next-line no-use-before-define */}
-                    <Canvas of={SubheadStory} />
+                    <Canvas of={Primary} />
                     <Controls />
 
                 </>
@@ -40,7 +40,7 @@ const meta: Meta<typeof Subhead> = {
 export default meta;
 type Story = StoryObj<typeof Subhead>;
 
-export const SubheadStory: Story = {
+export const Primary: Story = {
     args: {
         children: 'Subhead',
         weight: 'regular',

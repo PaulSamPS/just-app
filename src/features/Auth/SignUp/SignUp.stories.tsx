@@ -17,8 +17,8 @@ const meta: Meta<typeof SignUp> = {
 export default meta;
 type Story = StoryObj<typeof SignUp>;
 
-export const SignUpStory: Story = {};
-SignUpStory.decorators = [StoreDecorator({ signUp: { isLoading: false } })];
+export const Primary: Story = {};
+Primary.decorators = [StoreDecorator({ signUp: { isLoading: false } })];
 
 export const Error: Story = {};
 Error.decorators = [StoreDecorator({ signUp: { error: 'error' } })];

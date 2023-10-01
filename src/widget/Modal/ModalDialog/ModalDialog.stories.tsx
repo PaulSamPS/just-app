@@ -47,7 +47,7 @@ const meta: Meta<typeof ModalDialog> = {
 export default meta;
 type Story = StoryObj<typeof ModalDialog>;
 
-export const ModalDialogStory: Story = {
+export const Primary: Story = {
     args: {
         text: 'A u sure?',
         primaryButtonText: 'Yes',

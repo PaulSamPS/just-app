@@ -10,4 +10,4 @@ const meta: Meta<typeof ErrorPage> = {
 export default meta;
 type Story = StoryObj<typeof ErrorPage>;
 
-export const ErrorPageStory: Story = {};
+export const Primary: Story = {};

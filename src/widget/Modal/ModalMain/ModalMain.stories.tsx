@@ -16,7 +16,7 @@ const meta: Meta<typeof ModalMain> = {
 export default meta;
 type Story = StoryObj<typeof ModalMain>;
 
-export const ModalMainStory: Story = {
+export const Primary: Story = {
     args: {
         isOpen: true,
     },

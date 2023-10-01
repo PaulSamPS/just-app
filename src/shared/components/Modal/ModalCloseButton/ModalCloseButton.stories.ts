@@ -10,4 +10,4 @@ const meta: Meta<typeof ModalCloseButton> = {
 export default meta;
 type Story = StoryObj<typeof ModalCloseButton>;
 
-export const ModalCloseButtonStory: Story = {};
+export const Primary: Story = {};
