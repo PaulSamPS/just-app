@@ -23,7 +23,7 @@ export const SignUp = ({ goToSignIn }: SignUpProps) => {
     const {
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors, isValid }
     } = useForm<SignUpFormProps>();
     const dispatch = useAppDispatch();
     const error = useSelector(signUpErrorState);
@@ -62,6 +62,7 @@ export const SignUp = ({ goToSignIn }: SignUpProps) => {
                         size='m'
                         appearance='primary'
                         type='submit'
+                        disabled={!isValid}
                         stretched
                     >
                         Зарегистрироваться

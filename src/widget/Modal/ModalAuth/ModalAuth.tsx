@@ -1,18 +1,20 @@
-import { FormProvider } from 'react-hook-form';
 import { AuthProps } from './model/types';
-import { usePopupAuthAction } from './model/hooks';
-import { Portal, ModalContainer, ModalOverlay, ModalCloseButton } from '@/shared/components/Modal';
+import { useModalAuthAction } from './model/hooks';
+import {
+    Portal,
+    ModalContainer,
+    ModalOverlay,
+    ModalCloseButton,
+} from '@/shared/components/Modal';
 
 export const ModalAuth = ({ isOpen, onClose }: AuthProps) => {
-    const { methods, currentAction } = usePopupAuthAction({ isOpen });
+    const { currentAction } = useModalAuthAction();
 
     return (
         <Portal>
             <ModalContainer isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay onClose={onClose} />
-                <FormProvider {...methods}>
-                    {currentAction}
-                </FormProvider>
+                {currentAction}
                 <ModalCloseButton onClose={onClose} />
             </ModalContainer>
         </Portal>

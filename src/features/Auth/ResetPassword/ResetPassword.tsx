@@ -23,7 +23,7 @@ export const ResetPassword = ({ goToSignIn }: ResetPasswordProps) => {
     const {
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors, isValid }
     } = useForm<ResetPasswordFormProps>();
     const dispatch = useAppDispatch();
     const error = useSelector(resetPasswordErrorState);
@@ -51,6 +51,7 @@ export const ResetPassword = ({ goToSignIn }: ResetPasswordProps) => {
                         size='m'
                         appearance='primary'
                         type='submit'
+                        disabled={!isValid}
                         stretched
                     >
                         Сбросить

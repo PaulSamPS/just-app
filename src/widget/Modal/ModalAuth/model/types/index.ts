@@ -1,4 +1,3 @@
-import { UseFormReturn } from 'react-hook-form';
 import { ReactElement } from 'react';
 
 export type AuthProps = {
@@ -17,10 +16,6 @@ export type AuthFormProps = {
     password: string
     username?: string
 }
-
-export interface UseModalAuthActionProps extends Omit<AuthProps, 'onClose'>{}
-
 export interface UseModalAuthActionReturn {
-    methods: UseFormReturn<AuthFormProps, any, undefined>
     currentAction: ReactElement
 }
