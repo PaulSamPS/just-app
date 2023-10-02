@@ -10,7 +10,7 @@ import { Button } from '@/shared/components/Button';
 import { SignUpProps, SignUpFormProps } from './model/types';
 import { Subhead } from '@/shared/components/Typography/Subhead';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import { signUpErrorState, signUpSuccessMessageState } from './model/selector';
+import { signUpErrorState, signUpIsLoadingState, signUpSuccessMessageState } from './model/selector';
 import { signUp } from './model/api/signUp';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/DynamicModuleLoader';
 import { signUpReducer } from './model/slice/signUp.slice';
@@ -18,7 +18,6 @@ import { signUpReducer } from './model/slice/signUp.slice';
 const initialReducers: ReducerList = {
     signUp: signUpReducer,
 };
-
 export const SignUp = ({ goToSignIn }: SignUpProps) => {
     const {
         register,
@@ -28,6 +27,7 @@ export const SignUp = ({ goToSignIn }: SignUpProps) => {
     const dispatch = useAppDispatch();
     const error = useSelector(signUpErrorState);
     const successMessage = useSelector(signUpSuccessMessageState);
+    const isLoading = useSelector(signUpIsLoadingState);
 
     const onSubmit = async (formData: SignUpFormProps) => {
         dispatch(signUp(formData));
@@ -45,24 +45,28 @@ export const SignUp = ({ goToSignIn }: SignUpProps) => {
                         type='text'
                         placeholder='Введите email'
                         error={errors.email?.message}
+                        readOnly={isLoading}
                     />
                     <Input
                         {...register('password', passwordOptions)}
                         type='password'
                         placeholder='Введите пароль'
                         error={errors.password?.message}
+                        readOnly={isLoading}
                     />
                     <Input
                         {...register('username', usernameOptions)}
                         placeholder='Введите имя пользователя'
                         type='text'
                         error={errors.username?.message}
+                        readOnly={isLoading}
                     />
                     <Button
                         size='m'
                         appearance='primary'
                         type='submit'
-                        disabled={!isValid}
+                        disabled={!isValid || isLoading}
+                        isLoading={isLoading}
                         stretched
                     >
                         Зарегистрироваться

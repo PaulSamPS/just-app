@@ -13,7 +13,11 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { resetPassword } from './model/api/resetPassword';
 import { resetPasswordReducer } from './model/slice/resetPassword.slice';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/DynamicModuleLoader';
-import { resetPasswordErrorState, resetPasswordSuccessMessageState } from './model/selector';
+import {
+    resetPasswordErrorState,
+    resetPasswordIsLoadingState,
+    resetPasswordSuccessMessageState
+} from './model/selector';
 
 const initialReducers: ReducerList = {
     resetPassword: resetPasswordReducer,
@@ -28,6 +32,7 @@ export const ResetPassword = ({ goToSignIn }: ResetPasswordProps) => {
     const dispatch = useAppDispatch();
     const error = useSelector(resetPasswordErrorState);
     const successMessage = useSelector(resetPasswordSuccessMessageState);
+    const isLoading = useSelector(resetPasswordIsLoadingState);
 
     const onSubmit = async (formData: ResetPasswordFormProps) => {
         dispatch(resetPassword(formData));
@@ -46,12 +51,14 @@ export const ResetPassword = ({ goToSignIn }: ResetPasswordProps) => {
                         type='text'
                         placeholder='Введите email'
                         error={errors.email?.message}
+                        readOnly={isLoading}
                     />
                     <Button
                         size='m'
                         appearance='primary'
                         type='submit'
-                        disabled={!isValid}
+                        disabled={!isValid || isLoading}
+                        isLoading={isLoading}
                         stretched
                     >
                         Сбросить

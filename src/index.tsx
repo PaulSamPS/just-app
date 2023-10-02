@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
 import 'app/styles/index.scss';
 import { StoreProvider } from '@/app/providers/StoreProvider';
+import { AppAuthContextProvider } from '@/shared/context/appAuthModalContext';
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
@@ -13,7 +14,9 @@ root.render(
         <StoreProvider>
             <ErrorBoundary>
                 <ThemeProvider>
-                    <App />
+                    <AppAuthContextProvider>
+                        <App />
+                    </AppAuthContextProvider>
                 </ThemeProvider>
             </ErrorBoundary>
         </StoreProvider>

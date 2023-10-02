@@ -8,7 +8,7 @@ import {
 } from '@/shared/components/Modal';
 
 export const ModalAuth = ({ isOpen, onClose }: AuthProps) => {
-    const { currentAction } = useModalAuthAction();
+    const { currentAction } = useModalAuthAction({ onClose });
 
     return (
         <Portal>

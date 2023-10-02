@@ -1,7 +1,7 @@
 export interface SignUpSchema {
     isLoading: boolean;
     error?: string;
-    successMessage?: string | undefined
+    successMessage?: string
 }
 
 export interface SignUpProps {
@@ -11,7 +11,7 @@ export interface SignUpProps {
 export type SignUpFormProps = {
     email: string
     password: string
-    username?: string
+    username: string
 }
 
 export interface SignUpApiResult {

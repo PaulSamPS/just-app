@@ -1,17 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { SignInSchema } from '../types';
 import { signIn } from '../api/signIn';
 
 const initialState: SignInSchema = {
     isLoading: false,
     error: undefined,
-    message: undefined,
+    loggedInMessage: undefined,
 };
 
 export const signInSlice = createSlice({
     name: 'signIn',
     initialState,
-    reducers: {},
+    reducers: {
+        setLoggedIn: (state, action: PayloadAction<string>) => {
+            state.loggedInMessage = action.payload;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(signIn.pending, (state) => {
@@ -28,4 +32,5 @@ export const signInSlice = createSlice({
             });
     },
 });
+export const { actions: signInActions } = signInSlice;
 export const { reducer: signInReducer } = signInSlice;

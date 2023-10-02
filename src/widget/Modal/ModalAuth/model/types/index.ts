@@ -5,17 +5,9 @@ export type AuthProps = {
     onClose: () => void
 }
 
-export enum AuthActions {
-    signIn = 'signIn',
-    signUp = 'signUp',
-    resetPassword = 'resetPassword'
-}
+export type AuthActions = 'signIn' | 'signUp' | 'resetPassword'
 
-export type AuthFormProps = {
-    email: string
-    password: string
-    username?: string
-}
+export interface UseModalAuthActionProps extends Omit<AuthProps, 'isOpen'>{}
 export interface UseModalAuthActionReturn {
     currentAction: ReactElement
 }

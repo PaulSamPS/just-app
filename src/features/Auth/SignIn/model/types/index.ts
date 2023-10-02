@@ -3,12 +3,13 @@ import { User } from '@/entities/User';
 export interface SignInSchema {
     isLoading: boolean;
     error?: string;
-    message: string | undefined;
+    loggedInMessage: string | undefined;
 }
 
 export interface SignInProps {
     goToSignUp?: () => void
     goToResetPassword?: () => void
+    onClose: () => void
 }
 
 export type SignInFormProps = {

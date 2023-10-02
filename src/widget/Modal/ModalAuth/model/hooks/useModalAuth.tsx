@@ -1,29 +1,29 @@
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import {
-    AuthActions,
+    AuthActions, UseModalAuthActionProps,
     UseModalAuthActionReturn
 } from '@/widget/Modal/ModalAuth/model/types';
 import { SignIn } from '@/features/Auth/SignIn';
 import { SignUp } from '@/features/Auth/SignUp';
 import { ResetPassword } from '@/features/Auth/ResetPassword';
 
-export const useModalAuthAction = (): UseModalAuthActionReturn => {
-    const [authAction, setAuthAction] = useState<AuthActions>(AuthActions.signIn);
+export const useModalAuthAction = ({ onClose }: UseModalAuthActionProps): UseModalAuthActionReturn => {
+    const [authAction, setAuthAction] = useState<AuthActions>('signIn');
 
     const goToSignUp = () => {
-        setAuthAction(AuthActions.signUp);
+        setAuthAction('signUp');
     };
 
     const goToSignIn = () => {
-        setAuthAction(AuthActions.signIn);
+        setAuthAction('signIn');
     };
 
     const goToResetPassword = () => {
-        setAuthAction(AuthActions.resetPassword);
+        setAuthAction('resetPassword');
     };
 
-    const currentActionMapper = {
-        signIn: <SignIn goToSignUp={goToSignUp} goToResetPassword={goToResetPassword} />,
+    const currentActionMapper: Record<AuthActions, ReactElement> = {
+        signIn: <SignIn onClose={onClose} goToSignUp={goToSignUp} goToResetPassword={goToResetPassword} />,
         signUp: <SignUp goToSignIn={goToSignIn} />,
         resetPassword: <ResetPassword goToSignIn={goToSignIn} />
     };

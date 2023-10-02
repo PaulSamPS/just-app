@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { ModalContentWithHeader } from '@/shared/components/Modal';
 import { SignInFormProps, SignInProps } from './model/types';
 import { Input } from '@/shared/components/Form/Input';
@@ -12,14 +13,14 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { signIn } from './model/api/signIn';
 import { signInReducer } from './model/slice/signIn.slice';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/DynamicModuleLoader';
-import { signInErrorState } from './model/selector';
+import { signInErrorState, signInIsLoadingState, signInLoggedInMessageState } from './model/selector';
 import { Subhead } from '@/shared/components/Typography/Subhead';
 
 const initialReducers: ReducerList = {
     signIn: signInReducer,
 };
 
-export const SignIn = ({ goToSignUp, goToResetPassword }: SignInProps) => {
+export const SignIn = ({ onClose, goToSignUp, goToResetPassword }: SignInProps) => {
     const {
         register,
         handleSubmit,
@@ -27,10 +28,18 @@ export const SignIn = ({ goToSignUp, goToResetPassword }: SignInProps) => {
     } = useForm<SignInFormProps>();
     const dispatch = useAppDispatch();
     const error = useSelector(signInErrorState);
+    const isLoading = useSelector(signInIsLoadingState);
+    const isLoggedIn = useSelector(signInLoggedInMessageState);
 
     const onSubmit = async (formData: SignInFormProps) => {
         await dispatch(signIn(formData));
     };
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            onClose();
+        }
+    }, [isLoggedIn]);
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>
@@ -43,18 +52,21 @@ export const SignIn = ({ goToSignUp, goToResetPassword }: SignInProps) => {
                         type='text'
                         placeholder='Введите email'
                         error={errors.email?.message}
+                        readOnly={isLoading}
                     />
                     <Input
                         {...register('password', passwordOptions)}
                         type='password'
                         placeholder='Введите пароль'
                         error={errors.password?.message}
+                        readOnly={isLoading}
                     />
                     <Button
                         size='m'
                         appearance='primary'
                         type='submit'
-                        disabled={!isValid}
+                        disabled={!isValid || isLoading}
+                        isLoading={isLoading}
                         stretched
                     >
                         Войти

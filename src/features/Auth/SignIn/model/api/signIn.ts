@@ -3,6 +3,7 @@ import { AxiosError } from 'axios';
 import { SignInFormProps, SignInApiResult } from '../types';
 import { userActions } from '@/entities/User';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { signInActions } from '../slice/signIn.slice';
 
 export const signIn =
     createAsyncThunk<SignInApiResult, SignInFormProps, ThunkConfig<string>>(
@@ -20,6 +21,7 @@ export const signIn =
                 }
 
                 dispatch(userActions.setUser(response.data.user));
+                dispatch(signInActions.setLoggedIn(response.data.message));
                 localStorage.setItem('authToken', response.data.token);
                 extra.navigate!('/');
 
