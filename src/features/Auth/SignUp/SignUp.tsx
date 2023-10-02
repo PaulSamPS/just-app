@@ -18,7 +18,7 @@ import { signUpReducer } from './model/slice/signUp.slice';
 const initialReducers: ReducerList = {
     signUp: signUpReducer,
 };
-export const SignUp = ({ goToSignIn }: SignUpProps) => {
+const SignUp = ({ goToSignIn }: SignUpProps) => {
     const {
         register,
         handleSubmit,
@@ -77,3 +77,5 @@ export const SignUp = ({ goToSignIn }: SignUpProps) => {
         </DynamicModuleLoader>
     );
 };
+
+export default SignUp;

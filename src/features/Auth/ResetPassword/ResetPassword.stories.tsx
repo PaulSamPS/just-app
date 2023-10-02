@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ResetPassword } from './ResetPassword';
+import ResetPassword from './ResetPassword';
 import { StoreDecorator } from '@/shared/config/storybook';
 
 const meta: Meta<typeof ResetPassword> = {

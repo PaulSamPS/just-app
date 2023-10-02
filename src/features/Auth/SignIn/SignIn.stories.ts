@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { SignIn } from './SignIn';
+import SignIn from './SignIn';
 import { StoreDecorator } from '@/shared/config/storybook';
 
 const meta: Meta<typeof SignIn> = {

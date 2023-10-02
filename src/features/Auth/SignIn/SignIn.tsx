@@ -20,7 +20,7 @@ const initialReducers: ReducerList = {
     signIn: signInReducer,
 };
 
-export const SignIn = ({ onClose, goToSignUp, goToResetPassword }: SignInProps) => {
+const SignIn = ({ onClose, goToSignUp, goToResetPassword }: SignInProps) => {
     const {
         register,
         handleSubmit,
@@ -80,3 +80,5 @@ export const SignIn = ({ onClose, goToSignUp, goToResetPassword }: SignInProps) 
         </DynamicModuleLoader>
     );
 };
+
+export default SignIn;

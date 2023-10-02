@@ -23,7 +23,7 @@ const initialReducers: ReducerList = {
     resetPassword: resetPasswordReducer,
 };
 
-export const ResetPassword = ({ goToSignIn }: ResetPasswordProps) => {
+const ResetPassword = ({ goToSignIn }: ResetPasswordProps) => {
     const {
         register,
         handleSubmit,
@@ -71,3 +71,5 @@ export const ResetPassword = ({ goToSignIn }: ResetPasswordProps) => {
         </DynamicModuleLoader>
     );
 };
+
+export default ResetPassword;
