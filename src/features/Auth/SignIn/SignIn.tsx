@@ -39,7 +39,7 @@ export const SignIn = ({ onClose, goToSignUp, goToResetPassword }: SignInProps) 
         if (isLoggedIn) {
             onClose();
         }
-    }, [isLoggedIn]);
+    }, [isLoggedIn, onClose]);
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>
