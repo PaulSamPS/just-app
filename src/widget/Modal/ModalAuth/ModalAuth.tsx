@@ -10,7 +10,7 @@ import {
 import { Spinner } from '@/shared/components/Spinner';
 
 export const ModalAuth = ({ isOpen, onClose }: AuthProps) => {
-    const { currentAction } = useModalAuthAction({ onClose });
+    const { currentAction } = useModalAuthAction({ isOpen, onClose });
 
     return (
         <Portal>

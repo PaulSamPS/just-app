@@ -7,7 +7,7 @@ export type AuthProps = {
 
 export type AuthActions = 'signIn' | 'signUp' | 'resetPassword'
 
-export interface UseModalAuthActionProps extends Omit<AuthProps, 'isOpen'>{}
+export interface UseModalAuthActionProps extends AuthProps{}
 export interface UseModalAuthActionReturn {
     currentAction: ReactElement
 }
