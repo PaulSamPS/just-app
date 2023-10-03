@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export interface ModalContainerProps {
     children: ReactNode
-    isOpen: boolean
+    isOpen: boolean | undefined
     onClose: () => void
 }
 

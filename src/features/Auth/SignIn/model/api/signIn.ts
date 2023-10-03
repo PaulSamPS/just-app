@@ -20,7 +20,7 @@ export const signIn =
                     throw new Error();
                 }
 
-                dispatch(userActions.setUser(response.data.user));
+                dispatch(userActions.setUserAuthData(response.data.user));
                 dispatch(signInActions.setLoggedIn(response.data.message));
                 localStorage.setItem('authToken', response.data.token);
                 extra.navigate!('/');

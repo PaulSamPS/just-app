@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 
 export type AuthProps = {
-    isOpen: boolean
+    isOpen: boolean | undefined
     onClose: () => void
 }
 

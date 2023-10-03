@@ -1,0 +1,8 @@
+.profile {
+  margin-left: auto;
+  transition: color ease-in-out .2s;
+
+  &:hover {
+    color: var(--blue-400);
+  }
+}

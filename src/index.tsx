@@ -5,7 +5,7 @@ import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
 import 'app/styles/index.scss';
 import { StoreProvider } from '@/app/providers/StoreProvider';
-import { AppAuthContextProvider } from '@/shared/context/appAuthModalContext';
+import { AppAuthContextProvider } from '@/app/providers/AuthPtovider';
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
