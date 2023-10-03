@@ -1,21 +1,25 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import type { DropDownItemType } from '../../model/types/dropDownItem';
+import type { DropDownItemList } from '../../model/types/dropDownItem';
 import { animate } from '../../model/constants/animate';
 import { DropdownItem } from '@/shared/components/Dropdown/ui/DropdownItem/DropdownItem';
 
-export const DropdownItemList = ({ label, Icon, path, onNavigate }: DropDownItemType) => {
+export const DropdownItemList = ({ items, onNavigate }: DropDownItemList) => {
     const { pathname } = useLocation();
 
     return (
-        <DropdownItem
-            key={path}
-            {...animate}
-            aria-disabled={path === pathname && path !== '/'}
-            onClick={() => (onNavigate ? onNavigate(path, label) : undefined)}
-        >
-            <Icon style={{ width: '24px', height: '24px', marginRight: '8px' }} />
-            {label}
-        </DropdownItem>
+        <>
+            {items.map((i) => (
+                <DropdownItem
+                    key={i.path}
+                    {...animate}
+                    aria-disabled={i.path === pathname && i.path !== '/'}
+                    onClick={() => (onNavigate ? onNavigate(i.path, i.label) : undefined)}
+                >
+                    {i.icon}
+                    {i.label}
+                </DropdownItem>
+            ))}
+        </>
     );
 };

@@ -1,9 +1,13 @@
-import { FC, SVGProps } from 'react';
+import { ReactNode } from 'react';
 
-export interface DropDownItemType {
+ interface DropDownItemType {
     path: string
     label: string
-    Icon: FC<SVGProps<SVGSVGElement>>
-    onNavigate?: (path: string, text?: string) => void
+    icon: ReactNode
     logout?: () => void
+}
+
+export interface DropDownItemList {
+    items: DropDownItemType[]
+    onNavigate?: (path: string, text?: string) => void
 }

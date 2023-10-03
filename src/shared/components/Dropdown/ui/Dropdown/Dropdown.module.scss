@@ -6,7 +6,7 @@
   height: 2.5rem;
   padding-right: 1rem;
   padding-left: 1rem;
-  color: var(--color);
+  color: var(--steel-gray-a540);
   font-size: 15px;
   font-family: var(--font-family-regular);
   line-height: 1.5rem;
@@ -27,6 +27,10 @@
   }
 }
 
+.button[aria-expanded="true"] {
+  color: var(--blue-hover);
+}
+
 .button[data-focus-visible] {
   outline-style: solid;
 }
@@ -44,7 +48,7 @@
   max-height: max-content;
   padding: 0.5rem;
   overflow: visible;
-  color: var(--color);
+  color: var(--steel-gray-a540);
   font-size: 15px;
   font-family: var(--font-family-regular);
   background-color: var(--white);
@@ -53,9 +57,16 @@
   outline: none !important;
   box-shadow: 0 0 96px 0 rgb(0 0 0 / 16%), 0 0 2px 0 rgb(0 0 0 / 12%);
   overscroll-behavior: contain;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
 }
 
 .menu-arrow {
   color: var(--white);
   border: none;
+  top: -24px;
 }

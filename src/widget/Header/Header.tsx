@@ -11,13 +11,6 @@ import { userActions, userAuthDataState } from '@/entities/User';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { Dropdown, DropdownItemList } from '@/shared/components/Dropdown';
 
-const links = [
-    { path: '/account-settings', label: 'Account settings', icon: LogoIcon },
-    { path: '/support', label: 'Support', icon: LogoIcon },
-    { path: '/license', label: 'License', icon: LogoIcon },
-    { path: '/sign-out', label: 'Sign out', icon: LogoIcon },
-];
-
 export const Header = () => {
     const { isOpen, setIsOpen } = useContext(AppAuthContext);
     const [isMenu, setIsMenu] = useState(false);
@@ -35,6 +28,13 @@ export const Header = () => {
         }
     };
 
+    const links = [
+        { path: '/account-settings', label: 'Account settings', icon: <LogoIcon /> },
+        { path: '/support', label: 'Support', icon: <LogoIcon /> },
+        { path: '/license', label: 'License', icon: <LogoIcon /> },
+        { path: '/', label: 'Выйти', icon: <LogoIcon /> },
+    ];
+
     useEffect(() => {
         dispatch(userActions.initAuthData());
     }, [dispatch]);
@@ -49,16 +49,14 @@ export const Header = () => {
         <div className={styles.header}>
             <Logo icon={<LogoIcon />} text='JustApp' uppercase />
             {authData ? (
-                <Dropdown label='Профиль' open={isMenu} setOpen={setIsMenu} className={styles.dropdown}>
-                    {links.map((i) => (
-                        <DropdownItemList
-                            key={i.path}
-                            path={i.path}
-                            label={i.label}
-                            Icon={i.icon}
-                            onNavigate={onNavigate}
-                        />
-                    ))}
+                <Dropdown
+                    label='Профиль'
+                    Icon={LogoIcon}
+                    open={isMenu}
+                    setOpen={setIsMenu}
+                    className={styles.dropdown}
+                >
+                    <DropdownItemList items={links} onNavigate={onNavigate} />
                 </Dropdown>
             ) : <AuthButton />}
             <ModalAuth isOpen={isOpen} onClose={ocCloseAuthModal} />
