@@ -2,6 +2,12 @@
   display: flex;
   align-items: center;
   column-gap: 8px;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    color: var(--blue-themed);
+  }
 }
 
 .company-name {

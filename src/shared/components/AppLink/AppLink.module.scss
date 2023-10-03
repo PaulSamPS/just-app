@@ -1,0 +1,21 @@
+.app-link {
+	height: fit-content !important;
+	font-family: var(--font-family-regular);
+	text-decoration: none;
+	background: transparent;
+	transition: color ease-in-out 0.2s;
+
+	&:hover {
+		color: var(--blue-hover);
+		opacity: .8;
+	}
+
+	&:active {
+		color: var(--blue-hover);
+		opacity: .8;
+	}
+}
+
+.primary {
+	color: var(--black);
+}

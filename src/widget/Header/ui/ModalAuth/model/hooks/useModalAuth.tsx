@@ -2,7 +2,7 @@ import { ReactElement, useEffect, useState } from 'react';
 import {
     AuthActions, UseModalAuthActionProps,
     UseModalAuthActionReturn
-} from '@/widget/Modal/ModalAuth/model/types';
+} from '../types';
 import { SignIn } from '@/features/Auth/SignIn';
 import { SignUp } from '@/features/Auth/SignUp';
 import { ResetPassword } from '@/features/Auth/ResetPassword';
