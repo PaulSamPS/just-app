@@ -29,7 +29,7 @@ export const Header = () => {
     };
 
     const links = [
-        { path: '/account-settings', label: 'Account settings', icon: <LogoIcon /> },
+        { path: '/account-settings', label: 'Профиль', icon: <LogoIcon /> },
         { path: '/support', label: 'Support', icon: <LogoIcon /> },
         { path: '/license', label: 'License', icon: <LogoIcon /> },
         { path: '/', label: 'Выйти', icon: <LogoIcon /> },
@@ -50,7 +50,7 @@ export const Header = () => {
             <Logo icon={<LogoIcon />} text='JustApp' uppercase />
             {authData ? (
                 <Dropdown
-                    label='Профиль'
+                    label={authData.username}
                     Icon={LogoIcon}
                     open={isMenu}
                     setOpen={setIsMenu}
