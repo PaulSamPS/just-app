@@ -3,7 +3,7 @@ import { Title } from '@/shared/components/Typography/Title';
 
 const Home = () => (
     <div className={styles.home}>
-        <Title weight='regular' size='h1'>Home</Title>
+        <Title weight='regular' size='h2'>Home</Title>
     </div>
 );
 

@@ -16,5 +16,6 @@
 
 .wrapper {
 	flex-grow: 1;
+	height: calc(100vh - 61px);
 	padding: 20px 40px;
 }

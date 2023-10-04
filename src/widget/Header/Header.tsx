@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './Header.module.scss';
 import { Logo } from '@/shared/components/Logo';
-import { LogoIcon } from '@/shared/assets';
+import { LogoIcon, LogoutIcon, ProfileIcon } from '@/shared/assets';
 import { AppAuthContext } from '@/app/providers/AuthPtovider';
 import { ModalAuth } from './ui/ModalAuth/ModalAuth';
 import { AuthButton } from './ui/AuthButton/AuthButton';
@@ -28,11 +28,13 @@ export const Header = () => {
         }
     };
 
+    const onNavigateLogoTo = () => {
+        navigate('/');
+    };
+
     const links = [
-        { path: '/account-settings', label: 'Профиль', icon: <LogoIcon /> },
-        { path: '/support', label: 'Support', icon: <LogoIcon /> },
-        { path: '/license', label: 'License', icon: <LogoIcon /> },
-        { path: '/', label: 'Выйти', icon: <LogoIcon /> },
+        { path: '/profile', label: 'Профиль', icon: <ProfileIcon /> },
+        { path: '/', label: 'Выйти', icon: <LogoutIcon /> },
     ];
 
     useEffect(() => {
@@ -47,11 +49,18 @@ export const Header = () => {
 
     return (
         <div className={styles.header}>
-            <Logo icon={<LogoIcon />} text='JustApp' uppercase />
+            <Logo
+                icon={<LogoIcon />}
+                text='JustApp'
+                uppercase
+                onClick={onNavigateLogoTo}
+                role='button'
+                className={styles.logo}
+            />
             {authData ? (
                 <Dropdown
                     label={authData.username}
-                    Icon={LogoIcon}
+                    icon={<LogoIcon />}
                     open={isMenu}
                     setOpen={setIsMenu}
                     className={styles.dropdown}

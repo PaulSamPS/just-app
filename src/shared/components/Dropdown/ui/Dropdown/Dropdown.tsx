@@ -1,16 +1,9 @@
 import * as Ariakit from '@ariakit/react';
-import { ComponentPropsWithoutRef, FC, forwardRef, ReactNode, SVGProps } from 'react';
+import { forwardRef } from 'react';
 import { AnimatePresence, MotionConfig, motion, Variants } from 'framer-motion';
 import clsx from 'clsx';
 import styles from './Dropdown.module.scss';
-
-export interface MenuProps extends ComponentPropsWithoutRef<'div'> {
-    open?: boolean;
-    setOpen?: (open: boolean) => void;
-    label: ReactNode;
-    disabled?: boolean;
-    Icon?: FC<SVGProps<SVGSVGElement>>
-}
+import { DropdownProps } from '../../model/types/dropDownItem';
 
 export const animate = {
     closed: {
@@ -29,13 +22,13 @@ export const animate = {
         },
     },
 } satisfies Variants;
-export const Dropdown = forwardRef<HTMLDivElement, MenuProps>((
+export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>((
     {
         open,
         setOpen,
         label,
         children,
-        Icon,
+        icon,
         className,
         ...props
     },
@@ -48,7 +41,7 @@ export const Dropdown = forwardRef<HTMLDivElement, MenuProps>((
     return (
         <MotionConfig reducedMotion='user'>
             <Ariakit.MenuButton store={menu} ref={ref} className={clsx(styles.button, className)} {...props}>
-                {Icon && <Icon />}
+                {icon && icon}
                 {label}
             </Ariakit.MenuButton>
             <AnimatePresence>
