@@ -3,7 +3,7 @@ import { ModalAuth } from './ModalAuth';
 import { StoreDecorator } from '@/shared/config/storybook';
 
 const meta: Meta<typeof ModalAuth> = {
-    title: 'widget/ModalFullWithHeader/ModalAuth',
+    title: 'widget/ModalAuth',
     component: ModalAuth,
     argTypes: {
         onClose: {

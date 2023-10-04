@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ModalLoading } from './ModalLoading';
 
 const meta: Meta<typeof ModalLoading> = {
-    title: 'widget/ModalFullWithHeader/ModalLoading',
+    title: 'entities/Modal/ModalLoading',
     component: ModalLoading,
     argTypes: {},
 };

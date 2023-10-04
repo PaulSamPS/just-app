@@ -1,6 +1,6 @@
 import React, { Suspense, useMemo } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { ModalLoading } from '@/widget/Modal/ModalLoading';
+import { ModalLoading } from '@/entities/Modal/ModalLoading';
 import { routeConfig } from './config/routerConfig';
 
 export const AppRouter = () => {

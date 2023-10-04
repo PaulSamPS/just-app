@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { ModalFullWithHeader } from '@/entities/Modal/ModalFullWithHeader';
 import styles from './Profile.module.scss';
 import { Title } from '@/shared/components/Typography/Title';
 import { Button } from '@/shared/components/Button';
 import { UploadAvatar } from '@/features/Profile/UploadAvatar';
-import { ModalFullWithHeader } from '@/entities/ModalFullWithHeader';
 
 const Profile = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);

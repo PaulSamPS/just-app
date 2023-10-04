@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Header } from './Header';
+import { StoreDecorator } from '@/shared/config/storybook';
 
 const meta: Meta<typeof Header> = {
     title: 'widget/Header',
@@ -16,4 +17,8 @@ const meta: Meta<typeof Header> = {
 export default meta;
 type Story = StoryObj<typeof Header>;
 
-export const Primary: Story = {};
+export const WithOutLogin: Story = {};
+WithOutLogin.decorators = [StoreDecorator({ user: { authData: undefined } })];
+
+export const WithLogin: Story = {};
+WithLogin.decorators = [StoreDecorator({ user: { authData: { username: 'user' } } })];

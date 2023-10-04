@@ -4,11 +4,13 @@ import { ReducerList } from '@/shared/lib/DynamicModuleLoader';
 import { signInReducer } from '@/features/Auth/SignIn';
 import { signUpReducer } from '@/features/Auth/SignUp';
 import { resetPasswordReducer } from '@/features/Auth/ResetPassword';
+import { userReducer } from '@/entities/User';
 
 const defaultAsyncReducers: ReducerList = {
     signIn: signInReducer,
     signUp: signUpReducer,
-    resetPassword: resetPasswordReducer
+    resetPassword: resetPasswordReducer,
+    user: userReducer
 };
 
 export const StoreDecorator =
