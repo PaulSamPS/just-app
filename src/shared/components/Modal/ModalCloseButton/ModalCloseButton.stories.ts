@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ModalCloseButton } from './ModalCloseButton';
 
 const meta: Meta<typeof ModalCloseButton> = {
-    title: 'shared/Modal/ModalCloseButton',
+    title: 'shared/ModalFullWithHeader/ModalCloseButton',
     component: ModalCloseButton,
     argTypes: {},
 };

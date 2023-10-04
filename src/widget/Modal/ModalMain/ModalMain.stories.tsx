@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ModalMain } from './ModalMain';
 
 const meta: Meta<typeof ModalMain> = {
-    title: 'widget/Modal/ModalMain',
+    title: 'widget/ModalFullWithHeader/ModalMain',
     component: ModalMain,
     argTypes: {
         onClose: {

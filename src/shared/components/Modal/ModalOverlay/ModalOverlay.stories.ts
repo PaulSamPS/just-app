@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ModalOverlay } from './ModalOverlay';
 
 const meta: Meta<typeof ModalOverlay> = {
-    title: 'shared/Modal/ModalOverlay',
+    title: 'shared/ModalFullWithHeader/ModalOverlay',
     component: ModalOverlay,
     argTypes: {
         onClose: {

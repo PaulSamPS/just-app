@@ -3,7 +3,7 @@ import { ModalDialog } from './ModalDialog';
 import { DeleteOutlineIcon56 } from '@/shared/assets';
 
 const meta: Meta<typeof ModalDialog> = {
-    title: 'widget/Modal/ModalDialog',
+    title: 'widget/ModalFullWithHeader/ModalDialog',
     component: ModalDialog,
     argTypes: {
         text: {

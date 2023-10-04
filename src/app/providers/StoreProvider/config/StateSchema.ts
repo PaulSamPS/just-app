@@ -12,12 +12,14 @@ import { UserSchema } from '@/entities/User';
 import { SignInSchema } from '@/features/Auth/SignIn';
 import { SignUpSchema } from '@/features/Auth/SignUp';
 import { ResetPasswordSchema } from '@/features/Auth/ResetPassword';
+import { ProfileSchema } from '@/entities/Profile';
 
 export interface StateSchema {
     user: UserSchema;
     signIn?: SignInSchema
     signUp?: SignUpSchema
     resetPassword?: ResetPasswordSchema
+    profile?: ProfileSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;

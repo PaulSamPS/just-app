@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ModalContainer } from './ModalContainer';
 
 const meta: Meta<typeof ModalContainer> = {
-    title: 'shared/Modal/ModalContainer',
+    title: 'shared/ModalFullWithHeader/ModalContainer',
     component: ModalContainer,
     argTypes: {
         isOpen: {
